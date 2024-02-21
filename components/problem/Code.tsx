@@ -12,7 +12,7 @@ export default function Code({ onTestResult }: CodeProps) {
   async function handleSubmit(e: FormEvent<HTMLFormElement>){
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:3000/code/runtests", {
+      const response = await fetch(process.env.NEXT_PUBLIC_API_URL+"/code/runtests", {
         method: "POST",
         headers: {
           'Content-Type': 'application/json'
